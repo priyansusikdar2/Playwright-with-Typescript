@@ -1,0 +1,43 @@
+{
+  "name": "playwright-automation-training",
+  "version": "1.0.0",
+  "description": "Enterprise Playwright TypeScript Automation Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --project=chromium",
+    "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=mobile-chrome",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:ui": "playwright test --ui",
+    "test:day1": "cross-env PLAYWRIGHT_HTML_REPORT=playwright-report/day1 playwright test tests/day1 --project=chromium",
+    "test:day2": "cross-env PLAYWRIGHT_HTML_REPORT=playwright-report/day2 playwright test tests/day2 --project=chromium",
+    "test:day3": "cross-env PLAYWRIGHT_HTML_REPORT=playwright-report/day3 playwright test tests/day3 --project=chromium",
+    "test:day4": "cross-env PLAYWRIGHT_HTML_REPORT=playwright-report/day4 playwright test tests/day4 --project=chromium",
+    "test:day5": "cross-env PLAYWRIGHT_HTML_REPORT=playwright-report/day5 playwright test tests/day5 --project=chromium",
+    "report:all": "playwright show-report playwright-report",
+    "report:day1": "playwright show-report playwright-report/day1",
+    "report:day2": "playwright show-report playwright-report/day2",
+    "report:day3": "playwright show-report playwright-report/day3",
+    "report:day4": "playwright show-report playwright-report/day4",
+    "report:day5": "playwright show-report playwright-report/day5",
+    "trace:day4": "playwright show-trace test-results/day4-trace.zip"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "testing",
+    "automation",
+    "framework"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.3.1",
+    "typescript": "^7.0.2"
+  }
+}

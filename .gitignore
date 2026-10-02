@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Test Artifacts & Reports
+test-results/
+playwright-report/
+
+# Environment Variables & Secrets
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
