@@ -1,4 +1,4 @@
-import { test, expect, chromium } from '@playwright/test';
+import { test, expect, chromium, firefox, webkit } from '@playwright/test';
 
 test.describe('Day 1 Assessment: Introduction to Playwright and TypeScript Setup', () => {
 
@@ -23,9 +23,10 @@ test.describe('Day 1 Assessment: Introduction to Playwright and TypeScript Setup
    * Task 2: Manual Browser and Context Lifecycle Launch
    * Demonstrates understanding of Browser -> BrowserContext -> Page hierarchy
    */
-  test('Task 1.2: Demonstrate Browser, Context, and Page Lifecycle', async () => {
-    // 1. Launch a browser instance
-    const browser = await chromium.launch({ headless: true });
+  test('Task 1.2: Demonstrate Browser, Context, and Page Lifecycle', async ({ browserName }) => {
+    // 1. Launch a browser instance matching active test project
+    const browserType = browserName === 'firefox' ? firefox : browserName === 'webkit' ? webkit : chromium;
+    const browser = await browserType.launch({ headless: true });
 
     // 2. Create an isolated Browser Context (like an incognito session)
     const context = await browser.newContext({
